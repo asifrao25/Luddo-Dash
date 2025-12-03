@@ -315,7 +315,7 @@ struct LiveAIView: View {
 
     @ViewBuilder
     private var periodPicker: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 6) {
             ForEach(viewModel.periods, id: \.self) { period in
                 Button {
                     viewModel.changePeriod(period)
@@ -325,8 +325,8 @@ struct LiveAIView: View {
                         .fontWeight(viewModel.selectedPeriod == period ? .semibold : .regular)
                         .foregroundStyle(viewModel.selectedPeriod == period ? .white : .primary)
                         .lineLimit(1)
-                        .fixedSize(horizontal: true, vertical: false)
-                        .padding(.horizontal, 16)
+                        .frame(minWidth: 60)
+                        .padding(.horizontal, 12)
                         .padding(.vertical, 8)
                         .background(
                             viewModel.selectedPeriod == period
@@ -335,8 +335,10 @@ struct LiveAIView: View {
                         )
                         .cornerRadius(8)
                 }
+                .buttonStyle(.plain)
             }
         }
+        .frame(maxWidth: .infinity)
     }
 
     // MARK: - Overview Cards
