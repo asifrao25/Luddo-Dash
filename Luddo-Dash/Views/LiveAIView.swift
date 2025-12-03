@@ -27,17 +27,26 @@ class LiveAIViewModel: ObservableObject {
     let periods = ["today", "week", "month", "all"]
 
     func startAutoRefresh() {
+        // Cancel any existing timer first
+        refreshTimer?.cancel()
+        refreshTimer = nil
+
+        // Initial fetch
         Task { await refresh() }
 
+        // Set up 5-second auto-refresh timer
         refreshTimer = Timer.publish(every: 5, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
-                Task { await self?.refresh() }
+                Task { @MainActor in
+                    await self?.refresh()
+                }
             }
     }
 
     func stopAutoRefresh() {
         refreshTimer?.cancel()
+        refreshTimer = nil
     }
 
     func refresh() async {
