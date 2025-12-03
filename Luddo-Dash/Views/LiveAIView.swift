@@ -73,6 +73,8 @@ class LiveAIViewModel: ObservableObject {
                 self.errors = errorsResult
                 self.endpointsNotAvailable = false
             }
+            // Vibrate on successful refresh
+            FeedbackManager.shared.lightHaptic()
         } catch let apiError as APIError {
             // Check if it's a 404 error (endpoints not deployed yet)
             if case .httpError(404) = apiError {
