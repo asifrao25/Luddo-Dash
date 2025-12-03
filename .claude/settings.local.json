@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:luddo-api.asifrao.com)",
+      "Bash(curl:*)",
+      "Bash(open:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(git init:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
