@@ -173,12 +173,6 @@ struct LiveAIView: View {
                 recentGamesList(games: games.games)
             }
 
-            // Recent Decisions
-            if let decisions = viewModel.decisions, !decisions.decisions.isEmpty {
-                SectionHeader("Recent Decisions", icon: "brain.fill")
-                decisionsList(decisions: decisions.decisions)
-            }
-
             // Reset Section
             SectionHeader("Data Management", icon: "gearshape.fill")
             resetSection
