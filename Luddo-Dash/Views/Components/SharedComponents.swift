@@ -16,6 +16,7 @@ extension Color {
     static let liveAIOrange = Color(red: 249/255, green: 115/255, blue: 22/255)  // GPT tab
     static let systemPink = Color(red: 236/255, green: 72/255, blue: 153/255)
     static let utilsGreen = Color(red: 16/255, green: 185/255, blue: 129/255)
+    static let learnPurple = Color(red: 139/255, green: 92/255, blue: 246/255)  // Learn tab - vibrant purple
 
     // Status Colors
     static let success = Color(red: 34/255, green: 197/255, blue: 94/255)
@@ -61,6 +62,12 @@ extension LinearGradient {
 
     static let liveAIOrange = LinearGradient(
         colors: [Color.liveAIOrange, Color.liveAIOrange.opacity(0.7)],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
+    static let learnPurple = LinearGradient(
+        colors: [Color.learnPurple, Color.learnPurple.opacity(0.7)],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )

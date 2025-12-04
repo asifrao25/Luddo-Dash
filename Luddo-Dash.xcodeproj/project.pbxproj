@@ -25,6 +25,8 @@
 		A10000010000000000000029 /* AIAnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020000000000000029 /* AIAnalyticsView.swift */; };
 		A1000001000000000000002A /* SystemMonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000002A /* SystemMonitorView.swift */; };
 		A1000001000000000000002B /* UtilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000002B /* UtilitiesView.swift */; };
+		E096E2AE2EE1B8A2007D7669 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E096E2AD2EE1B8A2007D7669 /* LearnView.swift */; };
+		E096E2B02EE1B95E007D7669 /* LearningModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E096E2AF2EE1B95E007D7669 /* LearningModels.swift */; };
 		E0AD06C52ED8E73A008940E5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AD06C42ED8E73A008940E5 /* LocationManager.swift */; };
 		E0B599DB2EE0D5F30003A2E0 /* LiveAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B599DA2EE0D5F20003A2E0 /* LiveAIView.swift */; };
 		E0B599DD2EE0D6110003A2E0 /* LiveAIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B599DC2EE0D6110003A2E0 /* LiveAIModels.swift */; };
@@ -50,6 +52,8 @@
 		A1000002000000000000002A /* SystemMonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMonitorView.swift; sourceTree = "<group>"; };
 		A1000002000000000000002B /* UtilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesView.swift; sourceTree = "<group>"; };
 		A10000030000000000000001 /* Luddo-Dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luddo-Dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E096E2AD2EE1B8A2007D7669 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		E096E2AF2EE1B95E007D7669 /* LearningModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModels.swift; sourceTree = "<group>"; };
 		E0AD06C42ED8E73A008940E5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E0B599DA2EE0D5F20003A2E0 /* LiveAIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAIView.swift; sourceTree = "<group>"; };
 		E0B599DC2EE0D6110003A2E0 /* LiveAIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAIModels.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				A1000002000000000000001D /* HealthResponse.swift */,
 				A1000002000000000000001E /* MetricsModels.swift */,
 				A1000002000000000000001F /* GameModels.swift */,
+				E096E2AF2EE1B95E007D7669 /* LearningModels.swift */,
 				A10000020000000000000020 /* AIModels.swift */,
 				E0B599DC2EE0D6110003A2E0 /* LiveAIModels.swift */,
 				A10000020000000000000021 /* SystemModels.swift */,
@@ -117,6 +122,7 @@
 				A10000020000000000000028 /* GamesView.swift */,
 				A10000020000000000000029 /* AIAnalyticsView.swift */,
 				A1000002000000000000002A /* SystemMonitorView.swift */,
+				E096E2AD2EE1B8A2007D7669 /* LearnView.swift */,
 				A1000002000000000000002B /* UtilitiesView.swift */,
 				E0B599DA2EE0D5F20003A2E0 /* LiveAIView.swift */,
 				A10000050000000000000007 /* Components */,
@@ -212,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000001000000000000001A /* Luddo_DashApp.swift in Sources */,
+				E096E2AE2EE1B8A2007D7669 /* LearnView.swift in Sources */,
 				A1000001000000000000001B /* ContentView.swift in Sources */,
 				A1000001000000000000001D /* HealthResponse.swift in Sources */,
 				A1000001000000000000001E /* MetricsModels.swift in Sources */,
@@ -231,6 +238,7 @@
 				A10000010000000000000029 /* AIAnalyticsView.swift in Sources */,
 				A1000001000000000000002A /* SystemMonitorView.swift in Sources */,
 				A1000001000000000000002B /* UtilitiesView.swift in Sources */,
+				E096E2B02EE1B95E007D7669 /* LearningModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

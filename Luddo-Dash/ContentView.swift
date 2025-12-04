@@ -13,6 +13,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
     case games = "Games"
     case ai = "AI"
     case gpt = "GPT"
+    case learn = "Learn"
     case system = "System"
     case utilities = "Utils"
 
@@ -24,6 +25,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .games: return "gamecontroller.fill"
         case .ai: return "brain.fill"
         case .gpt: return "wand.and.stars"
+        case .learn: return "brain.head.profile"
         case .system: return "cpu.fill"
         case .utilities: return "globe"
         }
@@ -35,6 +37,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .games: return .gamesTeal
         case .ai: return .aiIndigo
         case .gpt: return .liveAIOrange
+        case .learn: return .learnPurple
         case .system: return .systemPink
         case .utilities: return .utilsGreen
         }
@@ -59,6 +62,8 @@ struct ContentView: View {
                     AIAnalyticsView()
                 case .gpt:
                     LiveAIView()
+                case .learn:
+                    LearnView()
                 case .system:
                     SystemMonitorView()
                 case .utilities:

@@ -333,4 +333,58 @@ class LuddoAPIClient: ObservableObject {
     func resetLiveAI() async throws -> ResetResponse {
         try await deleteRequest(endpoint: "/admin/reset/liveai")
     }
+
+    // MARK: - AI Learning (3 endpoints)
+
+    /// GET /liveai/insights - Current active insights
+    func learningInsights() async throws -> LearningInsightsResponse {
+        try await request(endpoint: "/liveai/insights")
+    }
+
+    /// GET /liveai/insights/history - Version history
+    func learningInsightsHistory() async throws -> LearningHistoryResponse {
+        try await request(endpoint: "/liveai/insights/history")
+    }
+
+    /// POST /liveai/insights/analyze - Manual trigger analysis
+    func triggerLearningAnalysis(days: Int = 7) async throws -> AnalyzeResponse {
+        try await postRequest(endpoint: "/liveai/insights/analyze?days=\(days)")
+    }
+
+    // MARK: - Generic POST Request
+
+    private func postRequest<T: Decodable>(endpoint: String) async throws -> T {
+        guard let url = URL(string: baseURL + endpoint) else {
+            throw APIError.invalidURL
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(apiKey, forHTTPHeaderField: "X-API-Key")
+        request.httpBody = "{}".data(using: .utf8)  // Empty JSON body
+
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw APIError.invalidResponse
+            }
+
+            guard httpResponse.statusCode == 200 else {
+                throw APIError.httpError(httpResponse.statusCode)
+            }
+
+            do {
+                let decoder = JSONDecoder()
+                return try decoder.decode(T.self, from: data)
+            } catch {
+                throw APIError.decodingError(error)
+            }
+        } catch let error as APIError {
+            throw error
+        } catch {
+            throw APIError.networkError(error)
+        }
+    }
 }
